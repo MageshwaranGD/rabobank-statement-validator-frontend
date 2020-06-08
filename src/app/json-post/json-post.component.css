@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+}
+.container{
+   width: 50%;
+   position: absolute;
+}
+.matpanel{
+    background:#dcd0c7;
+    margin: 25px;
+    border-radius: 15px;
+    opacity: 80%;
+}
+.matpanel:hover{
+    opacity: 100%;
+}
+.mat-panel-title span{
+    text-align: center;
+}
+body{
+    background-image: url('../../assets/RaboBank.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}

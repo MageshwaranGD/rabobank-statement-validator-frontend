@@ -1,0 +1,32 @@
+<body><h2>Rabo Bank Statement Processor</h2>
+<mat-accordion class="container">
+  <mat-expansion-panel *ngFor="let res of response" class="matpanel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span><b>{{res.result}}</b></span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table mat-table [dataSource]="res['errorRecords']" class="mat-elevation-z8">
+      <ng-container matColumnDef="reference">
+        <th mat-header-cell *matHeaderCellDef> Reference No </th>
+        <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+      </ng-container>
+      <ng-container matColumnDef="accountNumber">
+        <th mat-header-cell *matHeaderCellDef> Account No </th>
+        <td mat-cell *matCellDef="let element"> {{element.accountNumber}} </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['reference','accountNumber']" ></tr>
+    <tr mat-row *matRowDef="let row; columns:['reference','accountNumber'];"></tr>
+  </table>
+</mat-expansion-panel>
+<div *ngIf="displayError">
+  <mat-expansion-panel class="matpanel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{errorMessage.error.result}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    </mat-expansion-panel>
+</div>
+</mat-accordion>
+</body>
